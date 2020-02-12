@@ -25,6 +25,14 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v2
-    - name: Re-deploy
-      run: echo "OK\n"
+    - name: Connexion && Re-Deploy
+    - uses: fifsky/ssh-action@master
+      with:
+        command: |
+          docker stop bleemeo
+          docker rm bleemeo
+          docker pull cyberryteam/bleemeo-hackathon-2020:latest
+          docker run -d -p 80:8000 --name=bleemeo cyberryteam/bleemeo-hackathon-2020:latest
+        host: ${{ secrets.HOST }}
+        user: ubuntu
+        key: ${{ secrets.PRIVATE_KEY }}
