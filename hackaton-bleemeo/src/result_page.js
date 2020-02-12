@@ -11,7 +11,7 @@ const ResultPage = ({ onReturn, values}) => {
     React.useEffect(() => {
         var members_pie = [];
         for (var i = 0; i < members.length; i++) {
-            members_pie.push(10);
+            members_pie.push(1);
             setColors(colors => [...colors, 'rgba(' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) + ', 0.5)'])
         }
 
@@ -48,8 +48,8 @@ const ResultPage = ({ onReturn, values}) => {
     return (
         <div class="row">
             <div class="col-12 col-sm-6 py-4 d-flex justify-content-center flex-column">
-                <p className="mb-0 py-4">Members added:</p>
-                <ul className="list-group w-75 py-4">
+                <p className="mb-0 ml-3">Members added:</p>
+                <ul className="list-group w-75 ml-3">
                     {
                         members.map((el, i) => (<li className="list-group-item d-flex" style={{backgroundColor: members_pie_color[i]}}>{el} {i == king && <span class="badge badge-warning mb-0 pb-0 ml-3" style={{lineHeight: 1.5}}>King</span>}</li>))
                     }
