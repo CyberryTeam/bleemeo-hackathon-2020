@@ -19,14 +19,14 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         tags: "latest"
         dockerfile: Dockerfile
-    - name: Connexion & Deploy
+    - name: AWS EC2 Deployement
       uses: fifsky/ssh-action@master
       with:
         command: |
           docker stop bleemeo
           docker rm bleemeo
           docker pull cyberryteam/bleemeo-hackathon-2020:latest
-          docker run -d -p 80:8000 --name=bleemeo cyberryteam/bleemeo-hackathon-2020:latest
+          docker run -d -p 80:80 --name=bleemeo cyberryteam/bleemeo-hackathon-2020:latest
           docker image prune
         host: ${{ secrets.HOST }}
         user: ubuntu
