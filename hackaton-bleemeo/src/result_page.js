@@ -5,6 +5,7 @@ const ResultPage = ({ onReturn, values}) => {
     const [members] = React.useState(values);
     const [members_pie_color, setColors] = React.useState([]);
     const members_pie_color_current = React.useRef(members_pie_color);
+    const [king, setKing] = React.useState(-1);
     members_pie_color_current.current = members_pie_color;
 
     React.useEffect(() => {
@@ -40,13 +41,17 @@ const ResultPage = ({ onReturn, values}) => {
         }, 500);
     }, [])
 
+    React.useEffect(() => {
+        setKing(Math.floor(Math.random() * (members.length - 1)));
+    }, [])
+
     return (
         <div class="row">
             <div class="col-12 col-sm-6 py-4 d-flex justify-content-center flex-column">
                 <p className="mb-0 py-4">Members added:</p>
                 <ul className="list-group w-75 py-4">
                     {
-                        members.map((el, i) => (<li className="list-group-item d-flex" style={{backgroundColor: members_pie_color[i]}}>{el}</li>))
+                        members.map((el, i) => (<li className="list-group-item d-flex" style={{backgroundColor: members_pie_color[i]}}>{el} {i == king && <span class="badge badge-warning mb-0 pb-0 ml-3" style={{lineHeight: 1.5}}>King</span>}</li>))
                     }
                 </ul>
             </div>
