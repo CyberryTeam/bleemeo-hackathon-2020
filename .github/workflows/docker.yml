@@ -19,14 +19,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         tags: "latest"
         dockerfile: Dockerfile
-        
-  docker-deploy:
-    
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v2
-    - name: Connexion && Re-Deploy
+    - name: Connexion & Deploy
       uses: fifsky/ssh-action@master
       with:
         command: |
