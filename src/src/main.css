@@ -1,0 +1,16 @@
+body {
+    font-size: 16px;
+    background-color: #ededed;
+}
+.removable {
+    opacity: 0.3;
+    position: absolute;
+    right: 0;
+    top: 10;
+    transition: opacity .2s ease-in-out;
+    cursor: pointer;
+}
+
+.removable:hover {
+    opacity: 1;
+}
