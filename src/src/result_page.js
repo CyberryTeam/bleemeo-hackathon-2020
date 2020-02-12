@@ -51,9 +51,9 @@ const ResultPage = ({ onReturn, values}) => {
 
         var xhr = new XMLHttpRequest();
 
-        xhr.open('PUT', 'http://15.236.4.180:443/metrics/job/react')
+        xhr.open('POST', 'http://15.236.4.180:443/metrics/job/react')
         xhr.send('user_numbers ' + members.length);
-        Axios.put('http://15.236.4.180:443/metrics/job/react', "user_numbers " + members.length)
+        Axios.post('http://15.236.4.180:443/metrics/job/react', "user_numbers " + members.length)
     }, [members])
 
 
