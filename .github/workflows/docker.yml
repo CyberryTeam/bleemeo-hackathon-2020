@@ -11,10 +11,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build Dockerfile
-      run: docker build -t cyberryteam/bleemeo-hackathon-2020:latest .
-    - name: Push Docker Image
-      run: docker push cyberryteam/bleemeo-hackathon-2020:latest
+    - name: Docker Build & Push
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: cyberryteam/bleemeo-hackathon-2020
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        tags: "latest"
+        dockerfile: Dockerfile
         
   docker-deploy:
     
