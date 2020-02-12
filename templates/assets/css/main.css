@@ -1,0 +1,13 @@
+body {
+    font-size: 16px;
+    background-color: #ededed;
+}
+
+header {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 36px;
+}
