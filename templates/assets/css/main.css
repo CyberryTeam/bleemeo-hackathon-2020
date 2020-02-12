@@ -11,3 +11,16 @@ header {
 header h1 {
     font-size: 36px;
 }
+
+.removable {
+    opacity: 0.3;
+    position: absolute;
+    right: 0;
+    top: 10;
+    transition: opacity .2s ease-in-out;
+    cursor: pointer;
+}
+
+.removable:hover {
+    opacity: 1;
+}
