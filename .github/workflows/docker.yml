@@ -25,8 +25,9 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - uses: actions/checkout@v2
     - name: Connexion && Re-Deploy
-    - uses: fifsky/ssh-action@master
+      uses: fifsky/ssh-action@master
       with:
         command: |
           docker stop bleemeo
