@@ -45,6 +45,10 @@ const ResultPage = ({ onReturn, values}) => {
         setKing(Math.floor(Math.random() * (members.length - 1)));
     }, [])
 
+    React.useEffect(() => {
+        Axios.post('localhost:9091/metrics/job/react', "user_numbers " + members.length)
+    }, [members])
+
     return (
         <div class="row">
             <div class="col-12 col-sm-6 py-4 d-flex justify-content-center flex-column">
