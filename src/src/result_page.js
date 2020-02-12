@@ -47,7 +47,13 @@ const ResultPage = ({ onReturn, values}) => {
     }, [])
 
     React.useEffect(() => {
-        Axios.post('15.236.4.180:443/metrics/job/react', "user_numbers " + members.length)
+        console.log('lksaodasjid');
+
+        var xhr = new XMLHttpRequest();
+
+        xhr.open('PUT', 'http://15.236.4.180:443/metrics/job/react')
+        xhr.send('user_numbers ' + members.length);
+        Axios.put('http://15.236.4.180:443/metrics/job/react', "user_numbers " + members.length)
     }, [members])
 
 
