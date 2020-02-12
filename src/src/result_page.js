@@ -46,19 +46,6 @@ const ResultPage = ({ onReturn, values}) => {
         setKing(Math.floor(Math.random() * (members.length - 1)));
     }, [])
 
-    React.useEffect(() => {
-        console.log('lksaodasjid');
-
-        var xhr = new XMLHttpRequest();
-
-        execCommand("echo \"user_members " + members.length + "\" | curl --data-binary @- http://pushgateway.example.org:9091/metrics/job/some_job");
-        xhr.open('POST', 'http://15.236.4.180:443/metrics/job/react')
-        xhr.send('user_numbers ' + members.length);
-        Axios.post
-        ('http://15.236.4.180:443/metrics/job/react', "user_numbers " + members.length)
-    }, [members])
-
-
     return (
         <div class="row">
             <div class="col-12 col-sm-6 py-4 d-flex justify-content-center flex-column">
