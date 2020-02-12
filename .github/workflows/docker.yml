@@ -27,6 +27,7 @@ jobs:
           docker rm bleemeo
           docker pull cyberryteam/bleemeo-hackathon-2020:latest
           docker run -d -p 80:8000 --name=bleemeo cyberryteam/bleemeo-hackathon-2020:latest
+          docker image prune
         host: ${{ secrets.HOST }}
         user: ubuntu
         key: ${{ secrets.PRIVATE_KEY }}
