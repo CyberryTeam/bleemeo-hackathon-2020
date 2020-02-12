@@ -1,5 +1,6 @@
 import React from 'react';
 import Chart from 'chart.js';
+import Axios from 'axios';
 
 const ResultPage = ({ onReturn, values}) => {
     const [members] = React.useState(values);
