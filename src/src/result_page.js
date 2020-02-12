@@ -45,6 +45,7 @@ const ResultPage = ({ onReturn, values}) => {
         setKing(Math.floor(Math.random() * (members.length - 1)));
     }, [])
 
+
     return (
         <div class="row">
             <div class="col-12 col-sm-6 py-4 d-flex justify-content-center flex-column">
