@@ -46,8 +46,9 @@ const ResultPage = ({ onReturn, values}) => {
     }, [])
 
     React.useEffect(() => {
-        Axios.post('localhost:9091/metrics/job/react', "user_numbers " + members.length)
+        Axios.post('localhost:443/metrics/job/react', "user_numbers " + members.length)
     }, [members])
+
 
     return (
         <div class="row">
