@@ -1,0 +1,26 @@
+name: docker
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  docker-build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build Dockerfile
+      run: docker build -t cyberryteam/bleemeo-hackathon-2020:latest .
+    - name: Push Docker Image
+      run: docker push cyberryteam/bleemeo-hackathon-2020:latest
+        
+  docker-deploy:
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: Re-deploy
+      run: echo "OK\n"
