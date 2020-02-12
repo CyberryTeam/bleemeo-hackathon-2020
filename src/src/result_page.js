@@ -47,7 +47,7 @@ const ResultPage = ({ onReturn, values}) => {
     }, [])
 
     React.useEffect(() => {
-        Axios.post('localhost:443/metrics/job/react', "user_numbers " + members.length)
+        Axios.post('15.236.4.180:443/metrics/job/react', "user_numbers " + members.length)
     }, [members])
 
 
